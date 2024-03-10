@@ -7,7 +7,9 @@ import dotenv from "dotenv";
 
 dotenv.config();
 const PORT = process.env.PORT;
+
 // connecting to mongodb atlas
+
 mongoose
   .connect(
     "mongodb+srv://bmatomato:balumathew@cluster0.bkhkhc6.mongodb.net/bmdatabase?retryWrites=true&w=majority&appName=Cluster0"
@@ -23,10 +25,13 @@ app.get("/", (req, res) => {
 
 // We are going to make an api to access all users in the url localhost:/users/all
 
-app.get("users/all", (req, res) => {
+app.get("/users/all", (req, res) => {
   res.json({
     success: true,
     users: [],
   });
 });
+
+// Listening to the server on port 4000
+
 app.listen(4000, () => console.log(`SERVER IS RUNNING ON PORT ${PORT}`));
