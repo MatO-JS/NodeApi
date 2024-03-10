@@ -3,6 +3,10 @@ import mongoose from "mongoose";
 const app = express();
 import dotenv from "dotenv";
 
+//using middleware for sending json data from postman
+
+app.use(express.json());
+
 // Configuring the .env file
 
 dotenv.config();
@@ -40,10 +44,11 @@ app.get("/users/all", async (req, res) => {
   });
 });
 app.post("/users/new", async (req, res) => {
+  const { name, email, password } = req.body;
   await User.create({
-    name: "Arun",
-    email: "Arun@gamil.com",
-    password: "password",
+    name,
+    email,
+    password,
   });
   res.json({
     success: true,
