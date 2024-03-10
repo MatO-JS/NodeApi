@@ -37,7 +37,12 @@ app.get("/", (req, res) => {
 // We are going to make an api to access all users in the url localhost:/users/all
 
 app.get("/users/all", async (req, res) => {
+  //gets all the users in th db
   const users = await User.find({});
+  // To access the params from the url
+  console.log(req.query);
+  const keyword = req.query.keyword;
+  console.log(keyword);
   res.json({
     success: true,
     users,
@@ -50,7 +55,10 @@ app.post("/users/new", async (req, res) => {
     email,
     password,
   });
-  res.json({
+
+  //NOTE - status 201 means 'created'.It is good practice to send the status code according to requesst type.We can also send cookie in the repsonse
+
+  res.status(201).cookie("tempi", "lol cookie value").json({
     success: true,
     message: "Registered Succesfully",
   });
