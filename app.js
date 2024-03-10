@@ -3,10 +3,11 @@ import mongoose from "mongoose";
 const app = express();
 import dotenv from "dotenv";
 
-// connecting to mongodb atlas
+// Configuring the .env file
 
 dotenv.config();
 const PORT = process.env.PORT;
+// connecting to mongodb atlas
 mongoose
   .connect(
     "mongodb+srv://bmatomato:balumathew@cluster0.bkhkhc6.mongodb.net/bmdatabase?retryWrites=true&w=majority&appName=Cluster0"
@@ -20,7 +21,7 @@ app.get("/", (req, res) => {
   res.send("Nice working");
 });
 
-// We are going tomake an api to access all users in the url localhost:/users/all
+// We are going to make an api to access all users in the url localhost:/users/all
 
 app.get("users/all", (req, res) => {
   res.json({
