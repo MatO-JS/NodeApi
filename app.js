@@ -17,7 +17,7 @@ app.use("/users", userRouter);
 dotenv.config();
 const PORT = process.env.PORT;
 
-//!SECTION Dynamic Rouctin.Write the code below and go to postman give the url localhost:4000/userid and in the body tab add an id in json form {"id":"paste any id from the db entry"}.Now press send.We get the corresponding user in the response seciton of postman .(ie in the Body) tab of the response section.We can also send id in query params.enter id in keytab in params and the in value tab add value of id id from db.This gets send through the url.
+// Dynamic Rouctin.Write the code below and go to postman give the url localhost:4000/userid and in the body tab add an id in json form {"id":"paste any id from the db entry"}.Now press send.We get the corresponding user in the response seciton of postman .(ie in the Body) tab of the response section.We can also send id in query params.enter id in keytab in params and the in value tab add value of id id from db.This gets send through the url.
 
 // app.get("/userid/:id", async (req, res) => {
 //   // const { id } = req.body;
