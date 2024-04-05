@@ -11,7 +11,7 @@ export const app = express();
 config({ path: "./data/config.env" });
 //using middleware for sending json data from postman
 app.use(express.json());
-app.use("/users", userRouter);
+app.use("/api/v1/users", userRouter);
 
 // Configuring the .env file
 dotenv.config();
